@@ -1,0 +1,288 @@
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar à esquerda */
+.sidebar {
+  width: 15%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Conteúdo à direita */
+.content {
+  flex: 1;
+  width: 70%;
+}
+
+/* Botão para mobile */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.home-page {
+  height: 100%;
+  background-image: url('./assets/background_pizza.jpg'); /* Caminho da imagem */
+  background-size: cover; /* Ajusta para cobrir toda a área */
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .home-page h2 {
+  font-size: 48px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+} */
+
+ .cardapio-page {
+  height: 100vh; /* ocupa toda a altura da tela */
+  overflow-y: auto; /* scroll interno */
+  background-image: url('./assets/background_cardapio.jpg'); /* Caminho da imagem */
+  background-size: cover; /* Ajusta para cobrir toda a área */
+  background-position: center;
+  color: white;
+  padding: 20px;
+}
+
+.cardapio-page ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Layout geral da página de pedidos */
+.pedidos-page {
+  height: 100vh;
+  overflow-y: auto;        /* scroll apenas dentro da página de pedidos */
+  padding: 24px;
+  box-sizing: border-box;
+  background-image: url('./assets/background_pedidos.jpg'); /* Caminho da imagem */
+  background-size: cover; /* Ajusta para cobrir toda a área */
+  background-position: center;
+}
+
+/* Cabeçalho da página */
+.pedidos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pedidos-header h1 {
+  margin: 0;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Grid dos cards de pedidos */
+.pedidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+/* Card do pedido */
+.pedido-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Topo do card: título + badge de status */
+.pedido-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pedido-titulo {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* Badge de status (cores vêm do inline style) */
+.status-badge {
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Lista de itens do pedido */
+.pedido-itens {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* Cada item da lista */
+.pedido-item {
+  display: grid;
+  grid-template-columns: 1fr auto; /* info à esquerda, preço à direita */
+  align-items: center;
+  border-bottom: 1px dashed #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.pedido-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Coluna de informações do item */
+.pedido-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pedido-item-nome {
+  color: #333;
+}
+
+.pedido-item-quantidade {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Preço unitário do item */
+.pedido-item-preco {
+  font-weight: 600;
+  color: #424242;
+}
+
+/* Preço unitário (texto auxiliar) */
+.pedido-item-preco-unitario {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Subtotal destacado à direita */
+.pedido-item-subtotal {
+  font-weight: 600;
+}
+
+
+/* Rodapé com total */
+.pedido-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 2px solid #eee;
+  font-size: 1rem;
+}
+
+/* Estado de loading */
+.pedidos-loading {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #555;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Empilha conteúdo */
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a tela */
+    height: 10vh;
+    transform: translateX(-100%); /* Esconde fora da tela */
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    height: 100%;
+    padding: 10px;
+  }
+
+  .sidebar.open .logo{
+    margin-top: 100px;
+    margin-left: 75px;
+    text-align: initial;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+

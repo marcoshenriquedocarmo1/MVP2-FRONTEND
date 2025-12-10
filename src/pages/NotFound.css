@@ -1,0 +1,109 @@
+
+/* Layout geral */
+.notfound-page {
+  height: 100%;
+  background-image: url('../assets/background_404.jpg'); /* Caminho da imagem */
+  background-size: cover; /* Ajusta para cobrir toda a área */
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card central */
+.notfound-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Emoji temático */
+.notfound-emoji {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+/* Título e textos */
+.notfound-title {
+  font-size: 3rem;
+  margin: 0;
+  color: #d32f2f; /* vermelho da pizzaria */
+}
+
+.notfound-subtitle {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 8px 0 4px;
+}
+
+.notfound-text {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+/* Botões */
+.notfound-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Primário */
+.btn-primary {
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* Secundário */
+.btn-outline {
+  background: transparent;
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
+}
+
+.btn-outline:hover {
+  background: #fff5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .notfound-title {
+    font-size: 2.4rem;
+  }
+  .notfound-card {
+    padding: 24px 18px;
+  }
+}
+@media (max-width: 360px) {
+  .notfound-emoji {
+    font-size: 2.5rem;
+  }
+  .notfound-subtitle {
+    font-size: 1.1rem;
+  }
+}

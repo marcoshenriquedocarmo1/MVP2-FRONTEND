@@ -1,0 +1,36 @@
+.info-card {
+  /*background-color: rgba(255, 255, 255, 0.9);*/
+  background-color: #97090A;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Responsivo: telas médias e pequenas */
+@media (max-width: 1024px) {
+  .info-card {
+    position: fixed;                 /* fica acima do fluxo, visível */
+    top: 50%;
+    left: 42%;
+    transform: translate(-50%, -50%);/* centraliza perfeitamente */
+    width: min(90vw, 420px);         /* ocupa até 90% da largura da tela */
+    max-width: 420px;                
+    padding: 16px;                   
+  }
+}
+
+/* Ajustes extras para telas muito pequenas */
+@media (max-width: 480px) {
+  .info-card {
+    width: 80vw;                   /* um pouco mais de largura útil */
+    padding: 14px;
+    border-radius: 12px;
+  }
+}

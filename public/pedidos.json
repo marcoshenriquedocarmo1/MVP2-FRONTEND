@@ -1,0 +1,28 @@
+{
+  "pedidos": [
+    {
+      "numeroPedido": 1001,
+      "itens": [
+        { "itemId": "entrada_bruschetta", "quantidade": 2 },
+        { "itemId": "pizza_calabresa", "quantidade": 1 }
+      ],
+      "status": "Pedido Recebido"
+    },
+    {
+      "numeroPedido": 1002,
+      "itens": [
+        { "itemId": "pizza_margherita", "quantidade": 2 },
+        { "itemId": "pizza_doce_chocolate_morango", "quantidade": 2 }
+      ],
+      "status": "Em Preparação"
+    },
+    {
+      "numeroPedido": 1003,
+      "itens": [
+        { "itemId": "entrada_focaccia", "quantidade": 1 },
+        { "itemId": "pizza_quatro_queijos", "quantidade": 2 }
+      ],
+      "status": "Concluido"
+    }
+  ]
+}

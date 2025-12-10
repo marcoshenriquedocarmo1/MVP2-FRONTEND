@@ -1,0 +1,18 @@
+
+{
+  "entradas": [
+    { "id": "entrada_bruschetta", "nome": "Bruschetta", "preco": 30.00, "imagem": "/assets/item_bruschetta.jpg" },
+    { "id": "entrada_focaccia", "nome": "Focaccia", "preco": 33.00, "imagem": "/assets/item_focaccia.jpg" },
+    { "id": "entrada_antepasto_italiano", "nome": "Antepasto Italiano", "preco": 35.50, "imagem": "/assets/item_antepasto_italiano.jpg" }
+  ],
+  "pizzas": [
+    { "id": "pizza_margherita", "nome": "Margherita", "ingredientes": ["Molho de tomate", "Mussarela", "Manjericão"], "preco": 70.90, "imagem": "/assets/item_margherita.jpg" },
+    { "id": "pizza_calabresa", "nome": "Calabresa", "ingredientes": ["Molho de tomate", "Mussarela", "Calabresa", "Cebola"], "preco": 75.00, "imagem": "/assets/item_calabresa.jpg" },
+    { "id": "pizza_quatro_queijos", "nome": "Quatro Queijos", "ingredientes": ["Molho de tomate", "Mussarela", "Gorgonzola", "Parmesão", "Catupiry"], "preco": 80.00, "imagem": "/assets/item_quatro_queijos.jpg" }
+  ],
+  "pizzas_doces": [
+    { "id": "pizza_doce_chocolate_morango", "nome": "Chocolate com Morango", "ingredientes": ["Chocolate", "Morango"], "preco": 65.00, "imagem": "/assets/item_chocolate_morango.jpg" },
+    { "id": "pizza_doce_banana_canela", "nome": "Banana com Canela", "ingredientes": ["Banana", "Canela", "Leite condensado"], "preco": 63.00, "imagem": "/assets/item_banana_canela.jpg" },
+    { "id": "pizza_doce_romeu_julieta", "nome": "Romeu e Julieta", "ingredientes": ["Goiabada", "Queijo"], "preco": 68.00, "imagem": "/assets/item_romeu_julieta.jpg" }
+  ]
+}

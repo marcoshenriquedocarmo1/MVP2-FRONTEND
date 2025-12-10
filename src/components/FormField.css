@@ -1,0 +1,59 @@
+
+:root {
+  --border: #e5e7eb;
+  --danger: #ef4444;
+  --success: #16a34a;
+  --focus: #93c5fd;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  font-size: 1rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.input:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 4px rgba(147, 197, 253, 0.35);
+}
+
+/* Estados de validação */
+.input.is-invalid {
+  border-color: var(--danger) !important;
+  animation: shake 160ms ease-in-out 0s 2 alternate;
+}
+
+.input.is-valid {
+  border-color: var(--success) !important;
+}
+
+.error-msg {
+  color: var(--danger);
+  font-size: 0.85rem;
+  min-height: 1em;
+}
+
+/* Animação de "balançar" */
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-4px); }
+  50%  { transform: translateX(4px); }
+  75%  { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
