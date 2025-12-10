@@ -25,6 +25,7 @@ function Home() {
         description="Descubra nossas deliciosas pizzas e faça um react exclusivo."
         buttonLabel="Ver Cardápio"
         onButtonClick={handleClick}
+        tooltip="Clique para ver o cardápio"
       />
     </div>
 

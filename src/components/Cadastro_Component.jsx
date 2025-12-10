@@ -130,7 +130,7 @@ export default function Cadastro() {
             </div>
 
             <div className="actions">
-              <button type="submit" className="btn">Cadastrar</button>
+              <button type="submit" className="btn" title="Cadastra os dados informados">Cadastrar</button>
             </div>
           </form>
         </section>

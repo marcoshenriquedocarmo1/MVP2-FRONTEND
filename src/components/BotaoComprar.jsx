@@ -8,7 +8,7 @@ function BotaoComprar({ nome, quantidade }) {
   };
 
   return (
-    <button onClick={handleClick} className="botao-comprar">
+    <button onClick={handleClick} className="botao-comprar" title={`Clique para comprar ${quantidade}x ${nome}`}>
       Comprar
     </button>
   );

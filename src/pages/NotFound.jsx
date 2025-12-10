@@ -19,6 +19,7 @@ function NotFound() {
         description="Ops! Página não encontrada! A página que você tentou acessar não existe ou foi movida."
         buttonLabel="Voltar ao Cardápio"
         onButtonClick={handleClick}
+        tooltip="Clique para ver o cardápio"
       />
     </div>
   );
