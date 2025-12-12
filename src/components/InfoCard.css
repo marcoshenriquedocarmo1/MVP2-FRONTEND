@@ -1,36 +1,35 @@
+
+/* Desktop / padrão: canto superior esquerdo, responsivo */
 .info-card {
-  /*background-color: rgba(255, 255, 255, 0.9);*/
   background-color: #97090A;
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
+  width: min(90vw, 400px);
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  transform: translate(-50%, -50%);
+
+  position: fixed; /* fixa em relação à viewport */
+  top: max(16px);    
+  left: max(220px);  
+  transform: none; /* importante: remove translate para não “desesquadrar” */
 }
 
-
-/* Responsivo: telas médias e pequenas */
-@media (max-width: 1024px) {
+/* Ajuste em telas muito grandes: pode dar um respiro maior */
+@media (min-width: 1280px) {
   .info-card {
-    position: fixed;                 /* fica acima do fluxo, visível */
-    top: 50%;
-    left: 42%;
-    transform: translate(-50%, -50%);/* centraliza perfeitamente */
-    width: min(90vw, 420px);         /* ocupa até 90% da largura da tela */
-    max-width: 420px;                
-    padding: 16px;                   
+    top: 24px;
+    left: 240px;
   }
 }
 
-/* Ajustes extras para telas muito pequenas */
-@media (max-width: 480px) {
+/* Mobile: um pouco mais compacto */
+@media (max-width: 768px) {
   .info-card {
-    width: 80vw;                   /* um pouco mais de largura útil */
     padding: 14px;
     border-radius: 12px;
+    width: 92vw;          /* aproveita melhor a largura */
+    left: 4vw;
+    top: 210px;
   }
 }
