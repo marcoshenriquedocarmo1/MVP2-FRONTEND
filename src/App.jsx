@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState, useMemo, useCallback } from 'react'
 import logo from './assets/Logo_Pizzaria.png'
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from "react-router-dom"
 import './App.css'
 import InfoCard from "./components/InfoCard.jsx"
 import Card_Cardapio from "./components/Card_Cardapio";
@@ -156,50 +156,81 @@ function Cadastro() {
 }
 
 
-function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+function AppShell() {
+  // const [menuOpen, setMenuOpen] = useState(false);
   
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
+ 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const toggleMenu = useCallback(() => {
+    setMenuOpen(prev => !prev);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+  }, []);
+
+  // Fecha o menu quando a rota mudar (ex.: usuário clicou em um Link)
+  useEffect(() => {
+    closeMenu();
+  }, [location, closeMenu]);
+
+  // Fecha com ESC
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === "Escape") closeMenu();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [closeMenu]);
 
 
   return (
     <>
-    <Router>
-      <div className="app-container">
-        {/* Botão para mobile */}
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰ Menu
-        </button>
-        {/* Menu lateral */}
-        <nav className={`sidebar ${menuOpen ? "open" : ""}`}>
-          
+      <div className="app-container">  
+      {/* Botão para mobile */}
+      <button className="menu-toggle" onClick={toggleMenu} aria-controls="mobile-sidebar" aria-expanded={menuOpen}>
+        {menuOpen ? "✕ Fechar" : "☰ Menu"}
+      </button>
+      {/* Overlay para clique fora */}
+      <div className={`sidebar-overlay ${menuOpen ? "open" : ""}`} onClick={closeMenu} aria-hidden={!menuOpen}/>
+      {/* Menu lateral */}
+      <nav id="mobile-sidebar" className={`sidebar ${menuOpen ? "open" : ""}`} role="navigation" aria-label="Menu principal">
         <div className="logo">
           <img src={logo} alt="Logo Pizzaria" />
         </div>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/cardapio">Cardápio</Link></li>
-            <li><Link to="/pedidos">Pedidos</Link></li>
-            <li><Link to="/cadastro">Cadastro</Link></li>
-          </ul>
-        </nav>
-        {/* Conteúdo principal */}
-        <div className="content">          
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cardapio" element={<Cardapio />} />
-            <Route path="/pedidos" element={<Pedidos />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <ul className="menu-list">
+          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/cardapio" onClick={closeMenu}>Cardápio</Link></li>
+          <li><Link to="/pedidos" onClick={closeMenu}>Pedidos</Link></li>
+          <li><Link to="/cadastro" onClick={closeMenu}>Cadastro</Link></li>
+        </ul>
+      </nav>
+      {/* Conteúdo principal */}
+      <div className="content">          
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cardapio" element={<Cardapio />} />
+          <Route path="/pedidos" element={<Pedidos />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
-    </Router>
+    </div>
 
     </>
   )
 }
 
-export default App
+
+export default function App() {
+  return (
+    <Router>
+      <AppShell />
+    </Router>
+   );
+}

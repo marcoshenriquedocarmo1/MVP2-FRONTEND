@@ -1,16 +1,60 @@
-# React + Vite
+# Pizzaria React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição do Projeto
 
-Currently, two official plugins are available:
+Aplicação web desenvolvida em React e Node.js para gerenciamento de uma pizzaria. O projeto inclui funcionalidades como menu responsivo, cadastro de clientes, cardápio, pedidos e navegação entre páginas utilizando React Router.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instruções de Instalação
 
-## React Compiler
+### Pré-requisitos
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Passo 1: Clonar o repositório
+```
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
 
-## Expanding the ESLint configuration
+### Passo 2: Instalar dependências
+```
+npm install
+# ou
+yarn install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Passo 3: Rodar o projeto em modo desenvolvimento
+```
+npm start
+# ou
+yarn start
+```
+O projeto será iniciado em: http://localhost:3000
+
+## Scripts Disponíveis
+- `npm start` → Inicia o servidor de desenvolvimento.
+- `npm run build` → Gera a versão otimizada para produção.
+- `npm run dev` → Gera a versão otimizada para desenvolvimento.
+
+
+
+## Funcionalidades Principais
+- Menu Mobile:
+  - Animação suave (slide da esquerda para direita).
+  - Botão alterna entre “Menu” e “Fechar”.
+  - Fecha ao clicar em qualquer item ou fora do menu.
+
+- Formulário de Cadastro:
+  - Validação em tempo real.
+  - Feedback visual (bordas verdes/vermelhas).
+  - Responsivo para diferentes tamanhos de tela.
+
+## Tecnologias Utilizadas
+- React (Hooks, Router, etc)
+- Node.js
+- CSS Responsivo
+- JavaScript ES6+
+
+## Proposito
+- Esse projeto foi criado para ser um MINIMUM VIABLE PRODUCT (MVP) de Desenvolvimento Front-end Avançado
+
