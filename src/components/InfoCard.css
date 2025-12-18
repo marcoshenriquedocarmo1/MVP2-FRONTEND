@@ -16,7 +16,15 @@
 }
 
 /* Ajuste em telas muito grandes: pode dar um respiro maior */
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
+  .info-card {
+    top: 75px;
+    left: 370px;
+  }
+}
+
+/* Ajuste em telas grandes: pode dar um respiro maior */
+@media (max-width: 1280px) {
   .info-card {
     top: 24px;
     left: 240px;

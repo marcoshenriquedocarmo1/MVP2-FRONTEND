@@ -196,8 +196,7 @@ function AppShell() {
       <button className="menu-toggle" onClick={toggleMenu} aria-controls="mobile-sidebar" aria-expanded={menuOpen}>
         {menuOpen ? "✕ Fechar" : "☰ Menu"}
       </button>
-      {/* Overlay para clique fora */}
-      <div className={`sidebar-overlay ${menuOpen ? "open" : ""}`} onClick={closeMenu} aria-hidden={!menuOpen}/>
+
       {/* Menu lateral */}
       <nav id="mobile-sidebar" className={`sidebar ${menuOpen ? "open" : ""}`} role="navigation" aria-label="Menu principal">
         <div className="logo">
