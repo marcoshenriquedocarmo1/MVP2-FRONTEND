@@ -58,3 +58,9 @@ O projeto será iniciado em: http://localhost:3000
 ## Proposito
 - Esse projeto foi criado para ser um MINIMUM VIABLE PRODUCT (MVP) de Desenvolvimento Front-end Avançado
 
+### Considerações
+
+- Minha ideia foi deixar a aplicação mais clean possivel, não utilizando frameworks adicionais.
+- Sobre os componentes, trabalhei com eles mostrando que é possivel ter apenas um input como podemos ter uma pagina inteira componentizada.
+- Fiz um apelo vizual com os backgrounds mostrando que o front-end mesmo simples pode ser atraente
+- O site é responsivo e tem detalhes tanto em mobile quanto em alguns tamanhos de tela
